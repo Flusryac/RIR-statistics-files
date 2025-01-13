@@ -1,0 +1,28 @@
+name: update
+
+on:
+  workflow_dispatch:
+
+  schedule: 
+    - cron:  '30 16 1,16 * *'
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run scripts
+        run:
+          scripts/make.sh
+
+      - name: Add changed files
+        run: |
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add .
+          git commit -m "Update results from script execution" || echo "No changes to commit"
