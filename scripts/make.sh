@@ -85,6 +85,7 @@ main() {
     mkdir ./tmp
     mkdir ./tmp/sources
     mkdir ./tmp/tmp
+    mkdir ./release
 
     sources=./tmp/sources
     tmp=./tmp/tmp
