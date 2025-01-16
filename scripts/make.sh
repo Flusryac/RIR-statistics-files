@@ -19,8 +19,8 @@ EOF
     cat << EOF >> $tmp/chnroutes.rsc
 }
 
-:foreach cidr in /$cidrList do={
-  /ip firewall address-list add address=/$cidr list=chnroutes
+:foreach cidr in \$cidrList do={
+  /ip firewall address-list add address=\$cidr list=chnroutes
 }
 EOF
     mv $tmp/chnroutes.rsc $release
@@ -38,8 +38,8 @@ EOF
     cat << EOF >> $tmp/chnroutes.ipv6.rsc
 }
 
-:foreach cidr in /$cidrList do={
-  /ipv6 firewall address-list add address=/$cidr list=chnroutes.ipv6
+:foreach cidr in \$cidrList do={
+  /ipv6 firewall address-list add address=\$cidr list=chnroutes.ipv6
 }
 EOF
     mv $tmp/chnroutes.ipv6.rsc $release
@@ -56,8 +56,8 @@ EOF
     cat << EOF >> $tmp/cfroutes.rsc
 }
 
-:foreach cidr in /$cidrList do={
-  /ip firewall address-list add address=/$cidr list=cfroutes
+:foreach cidr in \$cidrList do={
+  /ip firewall address-list add address=\$cidr list=cfroutes
 }
 EOF
     mv $tmp/cfroutes.rsc $release
@@ -74,8 +74,8 @@ EOF
     cat << EOF >> $tmp/cfroutes.ipv6.rsc
 }
 
-:foreach cidr in /$cidrList do={
-  /ipv6 firewall address-list add address=/$cidr list=cfroutes.ipv6
+:foreach cidr in \$cidrList do={
+  /ipv6 firewall address-list add address=\$cidr list=cfroutes.ipv6
 }
 EOF
     mv $tmp/cfroutes.ipv6.rsc $release
