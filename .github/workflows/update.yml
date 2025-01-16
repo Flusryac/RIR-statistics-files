@@ -11,6 +11,7 @@ on:
       - ".gitignore"
       - "LICENSE*"
       - "*.md"
+
 jobs:
   build:
     runs-on: ubuntu-latest
